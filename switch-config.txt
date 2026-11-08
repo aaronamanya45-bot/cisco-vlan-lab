@@ -1,8 +1,53 @@
 ! Basic Configuration
+enable
+configure terminal
+hostname SW1
+no ip domain-lookup
+enable secret class123
+banner motd #Authorised Access Only - UCU Lab#
+line console 0
+password cisco
+login
+exit
+exit
+
 ! VLAN Creation
+configure terminal
+vlan 10
+name ADMIN
+exit
+vlan 20
+name SECRETARIAL
+exit
+vlan 30
+name GUESTS
+exit
+vlan 40
+name CASUAL
+exit
+
 ! Assign Access Ports
+interface range fastEthernet 0/1 - 2
+switchport mode access
+switchport access vlan 10
+exit
+interface range fastEthernet 0/3 - 4
+switchport mode access
+switchport access vlan 20
+exit
+interface range fastEthernet 0/5 - 6
+switchport mode access
+switchport access vlan 30
+exit
+interface range fastEthernet 0/7 - 8
+switchport mode access
+switchport access vlan 40
+exit
+
 ! Secure Unused Ports
+interface range fastEthernet 0/9 - 23
+shutdown
+exit
+
 ! Save Configuration
-! Optional Router-on-a-Stick
-! Trunk Port Configuration
-! Guest ACL
+copy running-config startup-config
