@@ -4,3 +4,4 @@
 ! Secure Unused Ports
 ! Save Configuration
 ! Optional Router-on-a-Stick
+! Trunk Port Configuration
