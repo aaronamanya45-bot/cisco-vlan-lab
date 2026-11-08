@@ -3,3 +3,4 @@
 ! Assign Access Ports
 ! Secure Unused Ports
 ! Save Configuration
+! Optional Router-on-a-Stick
